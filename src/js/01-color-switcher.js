@@ -1,20 +1,27 @@
-const startButton = document.getElementById('startButton');
-const stopButton = document.getElementById('stopButton');
-let intervalId = null;
+const startButton = document.querySelector('[data-start]');
+const stopButton = document.querySelector('[data-stop]');
+let intervalId;
 
 startButton.addEventListener('click', startColorSwitch);
 stopButton.addEventListener('click', stopColorSwitch);
 
 function startColorSwitch() {
-  startButton.disabled = true;
+  if (intervalId) {
+    return;
+  }
+
   stopButton.disabled = false;
+  startButton.disabled = true;
+
   intervalId = setInterval(changeBackgroundColor, 1000);
 }
 
 function stopColorSwitch() {
+  clearInterval(intervalId);
+  intervalId = null;
+
   startButton.disabled = false;
   stopButton.disabled = true;
-  clearInterval(intervalId);
 }
 
 function changeBackgroundColor() {
