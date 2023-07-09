@@ -81,16 +81,16 @@ function convertMs(ms) {
 
 // styles to timer
 function styleTimer() {
-    const timerEl = document.querySelector('.timer');
-    const fieldEl = document.querySelectorAll('.field');
-    const valueEl = document.querySelectorAll('.value');
-    timerEl.style.display = 'flex';
-    timerEl.style.marginTop = '30px';
-    timerEl.style.gap = '30px';
-    fieldEl.forEach(el => {
-      el.style.display = 'flex';
-      el.style.flexDirection = 'column';
-      el.style.alignItems = 'center';
-    });
-    valueEl.forEach(el => (el.style.fontSize = '48px'));
-  }
+  const timerEl = document.querySelector('.timer');
+  const fieldEl = document.querySelectorAll('.field');
+  const valueEl = document.querySelectorAll('.value');
+  timerEl.style.display = 'flex';
+  timerEl.style.marginTop = '30px';
+  timerEl.style.gap = '30px';
+  fieldEl.forEach(el => {
+    el.style.display = 'flex';
+    el.style.flexDirection = 'column';
+    el.style.alignItems = 'center';
+  });
+  valueEl.forEach(el => (el.style.fontSize = '48px'));
+}
